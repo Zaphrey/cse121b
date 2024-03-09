@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 
 let fullName = "Zachary Humphreys";
-let currentYear = "2023";
+let currentYear = "2024";
 let profilePicture = "images/me_with_friends.jpg";
 
 /* Step 3 - Element Variables */
