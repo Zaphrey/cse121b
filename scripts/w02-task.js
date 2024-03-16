@@ -24,7 +24,7 @@ imageElement.setAttribute("src", profilePicture);
 /* Step 5 - Array */
 
 let favoriteFoods = ["Lasagna", "Chicken Enchiladas", "Sausage Rice", "Caesar Salad"];
-foodElement.innerHTML = `<strong>${favoriteFoods}</strong>`;
+foodElement.innerHTML = `${favoriteFoods}`;
 
 // Declare and append tomato soup to food element
 let favoriteFood = "Tomato Soup";
