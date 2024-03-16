@@ -32,9 +32,9 @@ const subtractNumbers = function(){
 document.querySelector("#subtractNumbers").addEventListener("click", subtractNumbers);
 
 /* Arrow Function - Multiply Numbers */
-let multiply = (factor1, factor2) => factor1 * factor2;
+const multiply = (factor1, factor2) => factor1 * factor2;
 
-let multiplyNumbers = () => document.querySelector("#product").value = multiply(
+const multiplyNumbers = () => document.querySelector("#product").value = multiply(
     Number(document.querySelector("#factor1").value), Number(document.querySelector("#factor2").value));
 
 document.querySelector("#multiplyNumbers").addEventListener("click", multiplyNumbers);
