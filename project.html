@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/weather.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a id="toggleMenu">&equiv;</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="w01-task.html">W1 Task</a></li>
+            <li><a href="w03-task.html">W3 Task</a></li>
+            <li><a href="w04-task.html">W4 Task</a></li>
+            <li><a href="w05-task.html">W5 Task</a></li>
+            <li><a href="project.html" class="active">Project</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>W06: Project</h1>
+    </header>
+    <main>
+        <section id="zipcode">
+            <input type="text" placeholder="zipcode" id="zipcode-input">
+            <button id="search">Search</button>
+        </section>
+        <h1 id="upcoming" class="header">Hourly weather</h1>
+        <section id="hourly-container">
+            <div id="weather-info">
+                <div>Date</div>
+                <div>Temperature</div>
+                <div>Conditions</div>
+                <div>Rain</div>
+            </div>
+            <ul id="hourly-forecast"></ul>
+        </section>
+        <h1 id="forecast" class="header">Weekly forecast</h1>
+        <section id="forecast-container">
+            <div id="weekly-weather-info">
+                <div>Period</div>
+                <div>Wind Speed</div>
+                <div>Temperature</div>
+                <div>Rain</div>
+                <div>Forecast</div>
+                <div>Humidity</div>
+            </div>
+            <ul id="forecast-items"></ul>
+        </section>
+    </main>
+    <footer>
+        &copy;<span id="year"></span> | Week 06 - Project | CSE 121b
+    </footer>
+    <script src="/scripts/main.js"></script>
+    <script src="scripts/weatherapi.js"></script>
+</body>
+</html>
