@@ -270,4 +270,4 @@ async function onSearch() {
 
 document.querySelector("#search").addEventListener("click", onSearch)
 
-getWeather();
+getWeatherFromCoords(defaultLatitude, defaultLongitude);
