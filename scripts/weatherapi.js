@@ -85,7 +85,7 @@ function displayForecast(forecast) {
                         <div class="forecast-period">${day.name}</div>
                         <div class="wind-direction">${day.windSpeed}</br>${day.windDirection}</div>
                         <div class="forecast-temp">${day.temperature}°${day.temperatureUnit}</div>
-                        <div class="forecast-rain-chance">${precipitation}%</div>
+                        <div class="forecast-rain-chance">💧${precipitation}%</div>
                         <div class="short-forecast">${day.shortForecast}</div>
                         <div class="forecast-humidity">${day.relativeHumidity.value}%</div>
                     </li>`;
@@ -193,7 +193,7 @@ async function getCoordsFromZipcode(zipcode) {
     };
 };
 
-async function getWeatherFromCoords(latitude=0, longitude=0) {
+async function getWeatherFromCoords(latitude, longitude) {
     let zipcode = await getZipcodeFromCoords(latitude, longitude);
     document.querySelector("#zipcode-input").value = zipcode;
     console.log(`latitude: ${latitude}\nlongitude: ${longitude}`);
@@ -250,7 +250,7 @@ async function onSearch() {
     console.log(document.querySelector("#zipcode-input").value);
 
     try {
-        console.log(Number.isInteger(input.value));
+        console.log(Number.isInteger(Number(input.value)));
         
         if (Number.isInteger(Number(input.value)) == true) {
             let coords = await getCoordsFromZipcode(Number(input.value));

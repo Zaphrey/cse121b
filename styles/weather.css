@@ -102,6 +102,10 @@
     height: 75px;
 }
 
+.forecast-segment div, .forecast-segment-other div {
+    padding-top: 20px;
+}
+
 .forecast-period {
     text-align: left;
     padding: 27px 10px;
