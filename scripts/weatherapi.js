@@ -219,12 +219,22 @@ async function getWeatherFromCoords(latitude, longitude) {
 
         futureDate.setHours(currentDate.getHours() + 24);
 
-        displayHourlyForecast(hourlyForecast.properties.periods.filter(period => {
-            let periodDate = new Date(period.startTime);
-            return periodDate >= currentDate && periodDate < futureDate;
-        }));
+        if (hourlyForecast) {
+            displayHourlyForecast(hourlyForecast.properties.periods.filter(period => {
+                let periodDate = new Date(period.startTime);
+                return periodDate >= currentDate && periodDate < futureDate;
+            }));
+        }
+        else {
+            clearHourlyForecast();
+        }
 
-        displayForecast(regularForecast);
+        if (regularForecast) {
+            displayForecast(regularForecast);
+        }
+        else {
+            clearForecast();
+        }
     };                
 };
 
