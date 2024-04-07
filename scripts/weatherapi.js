@@ -257,11 +257,16 @@ function getWeather () {
 
 async function onSearch() {
     let input = document.querySelector("#zipcode-input");
-    console.log(document.querySelector("#zipcode-input").value);
 
     if (Number.isInteger(Number(input.value)) == true) {
         let coords = await getCoordsFromZipcode(Number(input.value));
-        getWeatherFromCoords(coords[0], coords[1]);
+        
+        if (coords[0] && coords[1]) {
+            getWeatherFromCoords(coords[0], coords[1]);
+        }
+        else {
+            getWeather();
+        }
     }
     else {
         getWeather();
