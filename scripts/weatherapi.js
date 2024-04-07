@@ -279,4 +279,4 @@ async function onSearch() {
 
 document.querySelector("#search").addEventListener("click", onSearch)
 
-onSearch();
+getWeather();
