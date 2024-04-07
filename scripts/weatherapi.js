@@ -6,7 +6,7 @@ let regularForecast = {};
 let county = {};
 
 const defaultLatitude = 32.833294;
-const defaultLongitude = -83.646925
+const defaultLongitude = -83.646925;
 
 function formatTime(date) {
     let hours = date.getHours();
@@ -17,7 +17,7 @@ function formatTime(date) {
 
     let dateStr = `${date.toLocaleDateString("en-US", {weekday: "long", month: "short", day: "numeric"})} @ ${hour}${meridiem}`;
 
-    return dateStr
+    return dateStr;
 }
 
 function getWeatherSymbol(period) {
@@ -259,22 +259,13 @@ async function onSearch() {
     let input = document.querySelector("#zipcode-input");
     console.log(document.querySelector("#zipcode-input").value);
 
-    try {
-        console.log(Number.isInteger(Number(input.value)));
-        
-        if (Number.isInteger(Number(input.value)) == true) {
-            let coords = await getCoordsFromZipcode(Number(input.value));
-            getWeatherFromCoords(coords[0], coords[1]);
-        }
-        else {
-            getWeather();
-        }
+    if (Number.isInteger(Number(input.value)) == true) {
+        let coords = await getCoordsFromZipcode(Number(input.value));
+        getWeatherFromCoords(coords[0], coords[1]);
     }
-    catch (error) {
-        console.log(error, "T");
-
+    else {
         getWeather();
-    };
+    }
 };
 
 document.querySelector("#search").addEventListener("click", onSearch)
